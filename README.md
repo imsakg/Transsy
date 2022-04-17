@@ -82,7 +82,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Design Screenshot](images/design.png)
 
 This project is about building a RC Controller from scratch. 
 
