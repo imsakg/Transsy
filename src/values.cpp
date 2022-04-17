@@ -1,0 +1,80 @@
+#include "Arduino.h"
+#include "values.h"
+#include "pins.h"
+
+struct _TOGGLES TOGGLES;
+struct _TOGGLES_PREV TOGGLES_PREV;
+
+void setPinModes(void)
+{
+
+    pinMode(STICK1_PITCH_PIN, INPUT);
+    pinMode(STICK1_PITCH_ROLL, INPUT);
+    pinMode(STICK2_THROTTLE_PIN, INPUT);
+    pinMode(STICK2_YAW_PIN, INPUT);
+
+    pinMode(SW1_PIN_T1, INPUT_PULLUP);
+    pinMode(SW1_PIN_T2, INPUT_PULLUP);
+    pinMode(SW2_PIN_T1, INPUT_PULLUP);
+    pinMode(SW3_PIN_T1, INPUT_PULLUP);
+    pinMode(SW4_PIN_T1, INPUT_PULLUP);
+    pinMode(SW5_PIN_T1, INPUT_PULLUP);
+    pinMode(SW6_PIN_T1, INPUT_PULLUP);
+    pinMode(SW7_PIN_T1, INPUT_PULLUP);
+    pinMode(SW7_PIN_T2, INPUT_PULLUP);
+    pinMode(SW8_PIN_T1, INPUT_PULLUP);
+    pinMode(SW8_PIN_T2, INPUT_PULLUP);
+    pinMode(SW9_PIN_T1, INPUT_PULLUP);
+    pinMode(SW9_PIN_T2, INPUT_PULLUP);
+    pinMode(SW10_PIN_T1, INPUT_PULLUP);
+    pinMode(SW10_PIN_T2, INPUT_PULLUP);
+    pinMode(SW11_PIN_T1, INPUT_PULLUP);
+    pinMode(SW11_PIN_T2, INPUT_PULLUP);
+
+    pinMode(RGB_B_PIN, OUTPUT);
+    pinMode(RGB_G_PIN, OUTPUT);
+    pinMode(RGB_R_PIN, OUTPUT);
+};
+
+void save_prev(void)
+{
+    TOGGLES_PREV.SW1_T1_P = TOGGLES.SW1_T1;
+    TOGGLES_PREV.SW1_T2_P = TOGGLES.SW1_T2;
+    TOGGLES_PREV.SW2_T1_P = TOGGLES.SW2_T1;
+    TOGGLES_PREV.SW3_T1_P = TOGGLES.SW3_T1;
+    TOGGLES_PREV.SW4_T1_P = TOGGLES.SW4_T1;
+    TOGGLES_PREV.SW5_T1_P = TOGGLES.SW5_T1;
+    TOGGLES_PREV.SW6_T1_P = TOGGLES.SW6_T1;
+    TOGGLES_PREV.SW7_T1_P = TOGGLES.SW7_T1;
+    TOGGLES_PREV.SW7_T2_P = TOGGLES.SW7_T2;
+    TOGGLES_PREV.SW8_T1_P = TOGGLES.SW8_T1;
+    TOGGLES_PREV.SW8_T2_P = TOGGLES.SW8_T2;
+    TOGGLES_PREV.SW9_T1_P = TOGGLES.SW9_T1;
+    TOGGLES_PREV.SW9_T2_P = TOGGLES.SW9_T2;
+    TOGGLES_PREV.SW10_T1_P = TOGGLES.SW10_T1;
+    TOGGLES_PREV.SW10_T2_P = TOGGLES.SW10_T2;
+    TOGGLES_PREV.SW11_T1_P = TOGGLES.SW11_T1;
+    TOGGLES_PREV.SW11_T2_P = TOGGLES.SW11_T2;
+};
+
+void read_values(void)
+{
+    save_prev();
+    TOGGLES.SW1_T1 = digitalRead(SW1_PIN_T1);
+    TOGGLES.SW1_T2 = digitalRead(SW1_PIN_T2);
+    TOGGLES.SW2_T1 = digitalRead(SW2_PIN_T1);
+    TOGGLES.SW3_T1 = digitalRead(SW3_PIN_T1);
+    TOGGLES.SW4_T1 = digitalRead(SW4_PIN_T1);
+    TOGGLES.SW5_T1 = digitalRead(SW5_PIN_T1);
+    TOGGLES.SW6_T1 = digitalRead(SW6_PIN_T1);
+    TOGGLES.SW7_T1 = digitalRead(SW7_PIN_T1);
+    TOGGLES.SW7_T2 = digitalRead(SW7_PIN_T2);
+    TOGGLES.SW8_T1 = digitalRead(SW8_PIN_T1);
+    TOGGLES.SW8_T2 = digitalRead(SW8_PIN_T2);
+    TOGGLES.SW9_T1 = digitalRead(SW9_PIN_T1);
+    TOGGLES.SW9_T2 = digitalRead(SW9_PIN_T2);
+    TOGGLES.SW10_T1 = digitalRead(SW10_PIN_T1);
+    TOGGLES.SW10_T2 = digitalRead(SW10_PIN_T2);
+    TOGGLES.SW11_T1 = digitalRead(SW11_PIN_T1);
+    TOGGLES.SW11_T2 = digitalRead(SW11_PIN_T2);
+};
