@@ -1,3 +1,8 @@
+#ifndef PINS_H
+#define PINS_H
+
+#include "Arduino.h"
+
 #define SW1_PIN_T1 22
 #define SW1_PIN_T2 32
 #define SW2_PIN_T1 25
@@ -14,7 +19,7 @@
 #define SW10_PIN_T1 5
 #define SW10_PIN_T2 6
 #define SW11_PIN_T1 44
-#define SW11_PIN_T2 A8
+#define SW11_PIN_T2 A8 // Change It later
 
 #define RGB_B_PIN 49
 #define RGB_G_PIN 47
@@ -25,23 +30,9 @@
 #define STICK2_THROTTLE_PIN A2
 #define STICK2_YAW_PIN A3
 
-/*
- sw1 = 22 / 32
- sw2 = 25
- sw3 = 27
- sw4 = 31
- sw5 = 29
- sw6 = 33
- sw7 = 35 / 37
- sw8 = 39 / 41
- sw9 = 43 / 45
- sw10 = 5 / 6
- sw11 = 44 / A8 # Change It later
+#define POT1_PIN A4 // Wire that pins
+#define POT2_PIN A5 // ...
 
- btn1 = 13
- btn2 = 17
- btn3 = 15
- btn4 = 19
+void setPinModes(void);
 
- # TODO : Wire Potentiometers pins
- */
+#endif // !PINS
