@@ -4,7 +4,7 @@ void setPinModes(void)
 {
 
     pinMode(STICK1_PITCH_PIN, INPUT);
-    pinMode(STICK1_PITCH_ROLL, INPUT);
+    pinMode(STICK1_ROLL_PIN, INPUT);
     pinMode(STICK2_THROTTLE_PIN, INPUT);
     pinMode(STICK2_YAW_PIN, INPUT);
     pinMode(POT1_PIN, INPUT);
