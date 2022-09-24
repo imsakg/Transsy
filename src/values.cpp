@@ -1,9 +1,8 @@
-#include "Arduino.h"
 #include "values.h"
-#include "pins.h"
 
 struct _TOGGLES TOGGLES;
 struct _TOGGLES_PREV TOGGLES_PREV;
+struct _STICKS STICKS;
 
 void save_prev(void)
 {
@@ -46,4 +45,9 @@ void read_values(void)
     TOGGLES.SW10_T2 = digitalRead(SW10_PIN_T2);
     TOGGLES.SW11_T1 = digitalRead(SW11_PIN_T1);
     TOGGLES.SW11_T2 = digitalRead(SW11_PIN_T2);
+
+    STICKS.STICK1_PITCH = analogRead(STICK1_PITCH_PIN);
+    STICKS.STICK1_ROLL = analogRead(STICK1_ROLL_PIN);
+    STICKS.STICK2_THROTTLE = analogRead(STICK2_THROTTLE_PIN);
+    STICKS.STICK2_YAW = analogRead(STICK2_YAW_PIN);
 };

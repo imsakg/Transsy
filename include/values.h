@@ -1,6 +1,10 @@
 #ifndef VALUES_H
 #define VALUES_H
 
+#include "Arduino.h"
+#include "values.h"
+#include "pins.h"
+
 struct _TOGGLES
 {
     bool SW1_T1 = 0;
@@ -48,6 +52,17 @@ struct _TOGGLES_PREV
 
 typedef struct _TOGGLES_PREV _TOGGLES_PREV;
 extern _TOGGLES_PREV TOGGLES_PREV;
+
+struct _STICKS
+{
+    uint16_t STICK1_PITCH = 0;
+    uint16_t STICK1_ROLL = 0;
+    uint16_t STICK2_THROTTLE = 0;
+    uint16_t STICK2_YAW = 0;
+};
+
+typedef struct _STICKS _STICKS;
+extern _STICKS STICKS;
 
 void save_prev(void);
 void read_values(void);
